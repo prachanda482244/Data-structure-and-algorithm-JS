@@ -28,5 +28,9 @@ const isPalindrome = str => {
 
 const anotherWayPalindrome = str => str === str.split("").reverse().join("") ? "Its palindrome" : "Not palindrome"
 
-console.log(isPalindrome("racecar"))
-console.log(anotherWayPalindrome("racecarw"))
+// console.log(isPalindrome("racecar"))
+// console.log(anotherWayPalindrome("racecarw"))
+
+const toCapitalize = string => string.toLowerCase().split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ")
+
+console.log(toCapitalize("hello world"))
