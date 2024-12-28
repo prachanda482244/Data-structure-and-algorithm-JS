@@ -34,7 +34,7 @@ class MyArray {
         console.log(this.data[index])
     }
     deleteByIndex(index) {
-        console.log(this.length)
+        // if the index is 3 and the lenght is 3 then it wont loop though but simply remove last element
         for (let i = index; i < this.length - 1; i++) {
             this.data[i] = this.data[i + 1]
         }
@@ -51,6 +51,6 @@ myArr.push("hello")
     // myArr.shift()
     // myArr.pop()
 console.log(myArr)
-console.log(myArr.deleteByIndex(1))
-myArr.unshift("new")
-    // console.log(myArr)
+myArr.deleteByIndex(2)
+    // myArr.unshift("new")
+console.log(myArr)
