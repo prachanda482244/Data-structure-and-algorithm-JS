@@ -206,7 +206,6 @@ const maxProfits = (priceArray) => {
 }
 console.log(maxProfits([7, 1, 2, 3, 5, 6]))
 
-console.clear()
 
 const arrayChunk = (arr, n) => {
     let chunkArr = []
@@ -221,3 +220,17 @@ const arrayChunk = (arr, n) => {
 }
 console.log(arrayChunk([1, 2, 3, 4, 5], 3))
 console.log(arrayChunk([1, 2, 3, 4, 5, 7, 8], 2))
+
+console.clear()
+
+const twoSum = (arr, target) => {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] + arr[j] === target) {
+                return [i, j]
+            }
+        }
+    }
+    return []
+}
+console.log(twoSum([2, 7, 9, 11], 20))
