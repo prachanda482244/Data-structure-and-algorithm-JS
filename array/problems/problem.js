@@ -174,3 +174,34 @@ function findMissingNumber(arr, n) {
 }
 
 console.log(findMissingNumber([1, 2, 4, 5, 6], 6)); // Output: 3
+
+function findPairs(arr, target) {
+    let seen = new Set();
+    let result = [];
+
+    for (let num of arr) {
+        let complement = target - num;
+        if (seen.has(complement)) {
+            result.push([complement, num]);
+        }
+        seen.add(num);
+    }
+
+    return result;
+}
+
+console.log(findPairs([1, 2, 3, 4, 3, 2, 1], 4)); // Output: [[1, 3], [2, 2]]
+
+
+const maxProfits = (priceArray) => {
+    let minPrice = priceArray[0]
+    let maxProfit = 0
+    for (let i = 0; i < priceArray.length; i++) {
+        let currentPrice = priceArray[i]
+        minPrice = Math.min(minPrice, currentPrice)
+        let potentialProfit = currentPrice - minPrice
+        maxProfit = Math.max(maxProfit, potentialProfit)
+    }
+    return maxProfit
+}
+console.log(maxProfits([7, 1, 2, 3, 5, 6]))
