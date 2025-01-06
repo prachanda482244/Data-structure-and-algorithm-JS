@@ -205,3 +205,19 @@ const maxProfits = (priceArray) => {
     return maxProfit
 }
 console.log(maxProfits([7, 1, 2, 3, 5, 6]))
+
+console.clear()
+
+const arrayChunk = (arr, n) => {
+    let chunkArr = []
+    let index = 0
+
+    while (index < arr.length) {
+        const chunk = arr.slice(index, n + index)
+        chunkArr.push(chunk)
+        index += n
+    }
+    return chunkArr
+}
+console.log(arrayChunk([1, 2, 3, 4, 5], 3))
+console.log(arrayChunk([1, 2, 3, 4, 5, 7, 8], 2))
