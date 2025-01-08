@@ -21,10 +21,33 @@ class LinkedList {
         this.tail = newNode
         this.length++
     }
+    pop() {
+        if (!this.head) {
+            return
+        }
+        this.temp = this.head
+        this.prev = this.head
+        while (this.temp.next) {
+            this.prev = this.temp
+            this.temp = this.prev.next
+        }
+        this.tail = this.prev;
+        this.tail.next = null
+        this.length--
+
+            if (this.length === 0) {
+                this.head = null;
+                this.tail = null
+            }
+        return this.temp
+    }
 }
 
 const linkedlist = new LinkedList(2)
 linkedlist.push(3)
 linkedlist.push(30)
 linkedlist.push(300)
+linkedlist.pop()
+linkedlist.pop()
+linkedlist.pop()
 console.log(linkedlist)
