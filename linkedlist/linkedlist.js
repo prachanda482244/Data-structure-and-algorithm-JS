@@ -64,6 +64,9 @@ class LinkedList {
         }
         return temp
     }
+    getFirst() {
+        return this.head
+    }
 }
 
 const linkedlist = new LinkedList(2)
@@ -77,4 +80,5 @@ console.log(linkedlist)
 // linkedlist.pop()
 // linkedlist.unshift(20)
 linkedlist.shift()
+linkedlist.getFirst()
 console.log(linkedlist)
