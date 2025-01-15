@@ -52,14 +52,29 @@ class LinkedList {
         this.length++
         return this
     }
+    shift() {
+        if (!this.head) {
+            return null
+        }
+        let temp = this.head
+        this.head = this.head.next
+        this.length--
+        if (this.length === 0) {
+            this.tail = null
+        }
+        return temp
+    }
 }
 
 const linkedlist = new LinkedList(2)
+
 linkedlist.push(3)
 linkedlist.push(30)
-linkedlist.push(300)
-linkedlist.pop()
-linkedlist.pop()
-linkedlist.pop()
-linkedlist.unshift(20)
+console.log(linkedlist)
+// linkedlist.push(300)
+// linkedlist.pop()
+// linkedlist.pop()
+// linkedlist.pop()
+// linkedlist.unshift(20)
+linkedlist.shift()
 console.log(linkedlist)
