@@ -67,18 +67,26 @@ class LinkedList {
     getFirst() {
         return this.head
     }
+    getLast() {
+        if (!this.head) return null
+        let temp = this.head
+        while (temp.next) {
+            if (!temp.next) return temp
+            temp = temp.next
+        }
+    }
 }
 
 const linkedlist = new LinkedList(2)
 
 linkedlist.push(3)
 linkedlist.push(30)
-console.log(linkedlist)
 // linkedlist.push(300)
 // linkedlist.pop()
 // linkedlist.pop()
 // linkedlist.pop()
 // linkedlist.unshift(20)
-linkedlist.shift()
-linkedlist.getFirst()
-console.log(linkedlist)
+// linkedlist.shift()
+// linkedlist.getFirst()
+linkedlist.getLast()
+console.log(linkedlist, "last")
