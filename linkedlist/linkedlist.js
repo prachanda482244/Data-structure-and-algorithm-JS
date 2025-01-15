@@ -35,11 +35,22 @@ class LinkedList {
         this.tail.next = null
         this.length--
 
-            if (this.length === 0) {
-                this.head = null;
-                this.tail = null
-            }
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null
+        }
         return this.temp
+    }
+    unshift(value) {
+        let newNode = new Node(value)
+        if (!this.head) {
+            this.head = newNode
+            this.tail = newNode
+        }
+        newNode.next = this.head
+        this.head = newNode
+        this.length++
+        return this
     }
 }
 
@@ -50,4 +61,5 @@ linkedlist.push(300)
 linkedlist.pop()
 linkedlist.pop()
 linkedlist.pop()
+linkedlist.unshift(20)
 console.log(linkedlist)
